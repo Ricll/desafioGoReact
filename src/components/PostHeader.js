@@ -1,15 +1,22 @@
-import React, { Component } from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { PostHeaderStyle, DataStyle } from '../styles/appstyles';
 
-import "../style.css";
 
-const PostHeader = props => (
-  <article>
-    <div className="author">
-      <img src={require("../images/steve.jpg")} />
-      <text>Steve Jobs </text>
-      <text>há 5 minutos</text>
-    </div>
-  </article>
+const PostHeader = ({ avatar, name, time }) => (
+  <PostHeaderStyle>
+    <img className="avatar" src={avatar} alt="avatar" />
+    <DataStyle>
+      <strong>{name}</strong>
+      <span>{time}</span>
+    </DataStyle>
+  </PostHeaderStyle>
 );
+
+PostHeader.propTypes = {
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+};
 
 export default PostHeader;

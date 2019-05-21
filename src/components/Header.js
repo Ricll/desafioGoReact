@@ -1,5 +1,6 @@
 import React from 'react';
-import { HeaderStyle } from './styles';
+
+import { HeaderStyle } from '../styles/appstyles';
 
 const Header = () => (
   <HeaderStyle>
